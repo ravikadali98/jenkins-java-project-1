@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title> WELCOME TO RAVI Kitchen</title>
+    <title> FAMILY RESTAURANT</title>
     <style>
         body {
             text-align: center;
@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Rajinikanth Jenkins Final changes Master PROD deploy </h1>
+    <h1>WELCOME TO RAVI KITCHEN </h1>
     <h2>Menu</h2>
 
     <div id="menu">
