@@ -1,102 +1,75 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title> WELCOME TO FAMILY RESTAURANT </title>
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
-        h1 {
-            color: #d9534f;
-        }
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
 
-        h2 {
-            color: #5bc0de;
-        }
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
 
-        .menu-item {
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin: 5px;
-            display: inline-block;
-            background-color: #5bc0de;
-            color: #fff;
-            border-radius: 5px;
-        }
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
 
-        #sub-items {
-            margin-top: 20px;
-        }
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
 
-        #sub-items h3 {
-            color: #5cb85c;
-        }
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 
-        .sub-item {
-            padding: 8px;
-            margin: 5px;
-            background-color: #dff0d8;
-            border: 1px solid #d6e9c6;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        .menu-item img, .sub-item img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 5px;
-            border-radius: 5px;
-        }
-    </style>
+.btn:hover {
+  opacity: 1;
+}
+</style>
 </head>
 <body>
-    <h1> KADALI KITCHEN </h1>
-    <h2>Menu</h2>
 
-    <div id="menu">
-        <div class="menu-item" onclick="showSubItems('Biryani')">
-            <img src="https://example.com/biryani.jpg" alt="Biryani">
-            Biryani
-        </div>
-        <div class="menu-item" onclick="showSubItems('Curries')">
-            <img src="https://example.com/curries.jpg" alt="Curries">
-            Curries
-        </div>
-        <div class="menu-item" onclick="showSubItems('Pizzas')">
-            <img src="https://example.com/pizzas.jpg" alt="Pizzas">
-            Pizzas
-        </div>
-        <div class="menu-item" onclick="showSubItems('Starters')">
-            <img src="https://example.com/starters.jpg" alt="Starters">
-            Starters
-        </div>
-    </div>
+<form action="/action_page.php" style="max-width:500px;margin:auto">
+  <h2>PAYTM MOVIES</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
 
-    <div id="sub-items"></div>
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw">
+  </div>
 
-    <script>
-        function showSubItems(category) {
-            var subItems = {
-                Biryani: ['Chicken Biryani', 'Mutton Biryani', 'Veg Biryani'],
-                Curries: ['Butter Chicken', 'Palak Paneer', 'Chana Masala'],
-                Pizzas: ['Margherita', 'Pepperoni', 'BBQ Chicken'],
-                Starters: ['Paneer Tikka', 'Chicken 65', 'Spring Rolls']
-            };
+  <button type="submit" class="btn">Register</button>
+</form>
 
-            var itemsList = subItems[category].map(function(item) {
-                return '<div class="sub-item">' + 
-                            '<img src="https://example.com/' + item.toLowerCase().replace(/ /g, '-') + '.jpg" alt="' + item + '">' + 
-                            item + 
-                        '</div>';
-            }).join('');
-
-            document.getElementById('sub-items').innerHTML = '<h3>' + category + '</h3>' + itemsList;
-        }
-    </script>
 </body>
 </html>
